@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="WindowsApplication1"
+                  namespace="BussinessObject.Common"
+                  auto-import="true">
+  <class name="User" table="user">-->
+<!--<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="false">
+  <class name="WindowsApplication1.BussinessObject.Common.User,WindowsApplication1" table="user">-->
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common">
+  <class name="Treatment" table="treatment">
+    <id name="eidtreatment" column="idtreatment" type="Int32">
+      <generator class="identity" />
+    </id>
+    <property name="enamatreatment" column="namatreatment" type="String" length="45" />
+
+    <property name="eharga" column="harga" type="Int32" />
+    <property name="ejam" column="jam" type="Decimal" />
+
+    <property name="eisdelete" column="isdelete" type="boolean"/>
+
+  </class>
+</hibernate-mapping>

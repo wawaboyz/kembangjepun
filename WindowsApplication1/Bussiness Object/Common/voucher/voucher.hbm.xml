@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common">
+  <class name="Voucher" table="voucher">
+    <id name="eidvoucher" column="idvoucher" type="Int32">
+      <generator class="identity" />
+    </id>
+    <property name="enomorvoucher" column="nomorvoucher" type="String" length="45" />
+
+    <property name="etglinput" column="tglinput" type="Date" />
+    <property name="etglkadaluarsa" column="tglkadaluarsa" type="Date" />
+
+    <property name="enamacustomer" column="namacustomer" type="String" length="50" />
+
+    <property name="eisdelete" column="isdelete" type="Boolean"/>
+    <many-to-one name="eidtreatment" column="idtreatment" class="Treatment" not-null="false" />
+    <many-to-one name="eidpenjualan" column="idpenjualan" class="Penjualan" not-null="false" />
+
+  </class>
+</hibernate-mapping>

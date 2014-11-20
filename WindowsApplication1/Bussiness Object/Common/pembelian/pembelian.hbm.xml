@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common">
+  <class name="Pembelian" table="pembelian">
+    <id name="eidpembelian" column="idpembelian" type="Int32">
+      <generator class="identity" />
+    </id>
+    <property name="etglpembelian" column="tglpembelian" type="Date" />
+    <property name="enamasupplier" column="namasupplier" type="String" length="100"/>
+
+    <property name="etax" column="tax" type="Int32" />
+    <property name="egrandtotal" column="grandtotal" type="Decimal" />
+
+    <property name="eisdelete" column="isdelete" type="Boolean"/>
+    <many-to-one name="eiduser" column="iduser" class="User" not-null="false" />
+    <set name="epembelianbarang" inverse="true" lazy="false" cascade="all" table="pembelian_barang">
+      <key column="idpembelian" />
+      <one-to-many class="PembelianBarang" />
+    </set>
+  </class>
+</hibernate-mapping>

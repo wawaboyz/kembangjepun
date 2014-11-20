@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common" default-lazy="false">
+  <class name="StokAdjustment" table="stokadjustment">
+    <id name="eidstokadjustment" column="idstokadjustment" type="Int32">
+      <generator class="identity" />
+    </id>
+    <property name="etgladjustment" column="tgladjustment" type="Date"/>
+    <property name="ealasan" column="alasan" type="String" length="500"/>
+    <property name="eisdelete" column="isdelete" type="Boolean"/>
+    <many-to-one name="eiduser" column="iduser" class="User" not-null="false" />
+
+    <set name="estokadjustmentbarang" inverse="true" lazy="false" cascade="all" table="stokadjustment_barang">
+      <key column="idstokadjustment" />
+      <one-to-many class="StokAdjustmentBarang" />
+    </set>
+</class>
+</hibernate-mapping>

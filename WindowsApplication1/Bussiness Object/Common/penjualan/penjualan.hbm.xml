@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common" default-lazy="false">
+  <class name="Penjualan" table="penjualan">
+    <id name="eidpenjualan" column="idpenjualan" type="Int32">
+      <generator class="identity" />
+    </id>
+    <property name="etglpenjualan" column="tglpenjualan" type="Date"/>
+    <property name="enamacustomer" column="namacustomer" type="String" length="50"/>
+    <property name="egrandtotal" column="grandtotal" type="Decimal"/>
+    <property name="ecarabayar" column="carabayar" type="String" length="45"/>
+    <property name="enokartu" column="nokartu" type="String" length="45"/>
+    <property name="enamanbank" column="namabank" type="String" length="45"/>
+    <property name="ediskon" column="diskon" type="Int32" length="11"/>
+    <property name="eisdelete" column="isdelete" type="Boolean"/>
+    <many-to-one name="eicustomer" column="idcustomer" class="Customer" not-null="false" />
+    <many-to-one name="eiduser" column="iduser" class="User" not-null="false" />
+    
+    <set name="epaketpenjualan" inverse="true" lazy="false" cascade="all" Table="paket_penjualan">
+      <key column="idpenjualan" />
+      <one-to-many class="PaketPenjualan" />
+    </set>
+    <set name="epenjualantreatment" inverse="true" lazy="false" cascade="all" Table="penjualan_treatment">
+      <key column="idpenjualan" />
+      <one-to-many class="PenjualanTreatment" />
+    </set>
+    <set name="evoucher" inverse="true" lazy="false" cascade="all">
+      <key column="idpenjualan" />
+      <one-to-many class="Voucher" />
+    </set>
+  </class>
+</hibernate-mapping>
