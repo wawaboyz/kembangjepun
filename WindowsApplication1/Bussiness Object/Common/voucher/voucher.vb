@@ -9,6 +9,10 @@
         Private treatment As Treatment
         Private penjualan As Penjualan
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idvo As Int32, ByVal nomorvo As String, ByVal tgli As Date, ByVal tglk As Date, ByVal namacus As String, ByVal isdel As Boolean, ByVal treat As Treatment, ByVal pen As Penjualan)
             idvoucher = idvo
             nomorvoucher = nomorvo
