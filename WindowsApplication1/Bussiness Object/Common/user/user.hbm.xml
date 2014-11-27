@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
-                   assembly="WindowsApplication1"
-                  namespace="BussinessObject.Common"
-                  auto-import="true">
-  <class name="User" table="user">-->
-<!--<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="false">
-  <class name="WindowsApplication1.BussinessObject.Common.User,WindowsApplication1" table="user">-->
+
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common">
   <class name="User" table="user">
     <id name="eiduser" column="iduser" type="Int32">
@@ -27,7 +21,13 @@
 
     <property name="eisdelete" column="isdelete" type="boolean"/>
     <many-to-one name="eidjabatan" column="idjabatan" class="Jabatan" not-null="false" />
+   
+    <set name="epenjualan" inverse="true" lazy="false" cascade="all">
+      <key column="iduser" />
+      <one-to-many class="Penjualan" />
+    </set>
     <!--<property name="eidjabatan" column="idjabatan" type="integer" length="11" />-->
+
 
   </class>
 </hibernate-mapping>
