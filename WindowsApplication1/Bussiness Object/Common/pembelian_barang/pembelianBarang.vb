@@ -8,6 +8,10 @@ Namespace BussinessObject.Common
         Private pembelianSet As Pembelian
         Private barangSet As Barang
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpembar As PembelianBarangId, ByVal jum As Int32, ByVal har As Decimal, ByVal subt As Decimal, ByVal pembelianS As Pembelian, ByVal barangS As Barang)
             idpembelianbarang = idpembar
             jumlah = jum
