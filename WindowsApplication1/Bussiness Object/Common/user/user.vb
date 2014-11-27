@@ -16,6 +16,28 @@ Namespace BussinessObject.Common
         Private agama As String
         Private isdelete As Boolean
         Private jabatan As Jabatan
+        Private penjualan As NHibernate.Collection.PersistentSet
+
+        Public Sub New()
+
+        End Sub
+
+        Sub New(ByVal idu As Int32, ByVal userna As String, ByVal pa As String, ByVal na As String, ByVal alm As String, ByVal kom As Int32, ByVal nok As String, ByVal jeniskel As Char, ByVal tlp As String, ByVal aga As String, ByVal isdel As Boolean, ByVal jab As Jabatan, ByVal pen As NHibernate.Collection.PersistentSet)
+            iduser = idu
+            username = userna
+            pass = pa
+            nama = na
+            alamat = alm
+            komisi = kom
+            noktp = nok
+            jeniskelamin = jeniskel
+            telepon = tlp
+            agama = aga
+            isdelete = isdel
+            jabatan = jab
+            penjualan = pen
+        End Sub
+
 
         Public Overridable Property eiduser() As Int32
             Get
@@ -136,5 +158,14 @@ Namespace BussinessObject.Common
 
             End Set
         End Property
+        Public Overridable Property epenjualan() As NHibernate.Collection.PersistentSet
+            Get
+                Return penjualan
+            End Get
+            Set(value As NHibernate.Collection.PersistentSet)
+                penjualan = value
+            End Set
+        End Property
+
     End Class
 End Namespace
