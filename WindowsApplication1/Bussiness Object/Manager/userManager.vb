@@ -13,9 +13,7 @@ Namespace BussinessObject.Manager
             Dim listuser As User
             Dim listUserJabatan As userJabatan
             listuser = getSession.CreateQuery("from User where username= :user and pass = :pass").SetParameter("user", user).SetParameter("pass", pass).List.Cast(Of User)().Single
-
             listUserJabatan = New userJabatan(listuser)
-
             getTransaction.Commit()
             getSession.Close()
             Return listUserJabatan
