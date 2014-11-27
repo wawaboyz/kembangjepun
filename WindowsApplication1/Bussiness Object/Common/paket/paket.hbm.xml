@@ -8,15 +8,15 @@
     <property name="ehargapaket" column="harga" type="Decimal"/>
     <property name="eaktif" column="aktif" type="Boolean"/>
     <property name="eisdelete" column="isdelete" type="Boolean"/>
-    <set name="ebarangpaket" inverse="true" lazy="false" cascade="all" Table="barang_paket">
+    <set name="ebarangpaket" inverse="true" lazy="false" cascade="all" table="barang_paket">
       <key column="idpaket" />
       <one-to-many class="BarangPaket" />
     </set>
-    <set name="epaketpenjualan" inverse="true" lazy="false" cascade="all" Table="paket_penjualan">
+    <set name="epaketpenjualan" inverse="true" lazy="false" cascade="all" table="paket_penjualan">
       <key column="idpaket" />
       <one-to-many class="PaketPenjualan" />
     </set>
-    <set name="epakettreatment" inverse="true" lazy="false" cascade="all" Table="paket_treatment">
+    <set name="epakettreatment" inverse="true" lazy="false" cascade="all" table="paket_treatment">
       <key column="idpaket" />
       <one-to-many class="PaketTreatment" />
     </set>
