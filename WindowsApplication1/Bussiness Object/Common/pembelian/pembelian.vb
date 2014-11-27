@@ -10,6 +10,10 @@ Namespace BussinessObject.Common
         Private iduser As User
         Private pembelianbarang As NHibernate.Collection.PersistentSet
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpem As Int32, ByVal tglpem As Date, ByVal namasupp As String, ByVal t As Int32, ByVal grandt As Decimal, ByVal isdel As Boolean, ByVal u As User, ByVal pembar As NHibernate.Collection.PersistentSet)
             idpembelian = idpem
             tglpembelian = tglpem
