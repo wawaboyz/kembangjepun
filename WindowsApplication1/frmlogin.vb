@@ -13,6 +13,10 @@ Public Class frmlogin
     Private jabatanList As List(Of Jabatan)
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'CATATAN :
+        '1. MENU DELETE VOUCHER DAN MENGHANGUSKAN VOUCHER PERLU / TIDAK -- KARENA USER SALAH INPUT JUMLAH, ITEM DAN NO VOUCHER
+
+
 
         'MessageBox.Show(System.Reflection.Assembly.GetExecutingAssembly.GetName.Name())
 
