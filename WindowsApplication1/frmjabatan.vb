@@ -30,23 +30,23 @@ Public Class frmjabatan
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-        Dim menu As String
+        Dim strmenu As String
         jabatan.enamajabatan = txtjabatan.Text
         jabatan.ekomisijabatan = txtkomisi.Text
 
         If (chkmaster.Checked = True) Then
-            menu = String.Concat(menu, "1")
+            strmenu = String.Concat(strmenu, "1")
         End If
         If (chkpenjualan.Checked = True) Then
-            menu = String.Concat(menu, "2")
+            strmenu = String.Concat(strmenu, "2")
         End If
         If (chkpembelian.Checked = True) Then
-            menu = String.Concat(menu, "3")
+            strmenu = String.Concat(strmenu, "3")
         End If
         If (chklaporan.Checked = True) Then
-            menu = String.Concat(menu, "4")
+            strmenu = String.Concat(strmenu, "4")
         End If
-        jabatan.emenu = menu
+        jabatan.emenu = strmenu
         If (action = "new") Then
             jabatanmanager.save(jabatan)
         ElseIf (action = "edit") Then
