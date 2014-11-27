@@ -13,6 +13,25 @@ Namespace BussinessObject.Common
         Private tgllahir As Date
         Private aktif As Boolean
         Private isdelete As Boolean
+        Private penjualan As NHibernate.Collection.PersistentSet
+
+        Public Sub New()
+
+        End Sub
+
+        Sub New(ByVal idcus As Int32, ByVal nam As String, ByVal alm As String, ByVal tel As String, ByVal nokar As String, ByVal jenis As Char, ByVal tgllah As Date, ByVal akt As Boolean, ByVal isdel As Boolean, ByVal pen As NHibernate.Collection.PersistentSet)
+            idcustomer = idcus
+            nama = nam
+            alamat = alm
+            telp = tel
+            nomorkartu = nokar
+            jeniskelamin = jenis
+            tgllahir = tgllah
+            aktif = akt
+            isdelete = isdel
+            penjualan = pen
+        End Sub
+
 
 
 
@@ -101,6 +120,14 @@ Namespace BussinessObject.Common
 
             Set(ByVal value As Boolean)
                 isdelete = value
+            End Set
+        End Property
+        Public Overridable Property epenjualan() As NHibernate.Collection.PersistentSet
+            Get
+                Return penjualan
+            End Get
+            Set(value As NHibernate.Collection.PersistentSet)
+                penjualan = value
             End Set
         End Property
 
