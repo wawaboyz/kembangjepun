@@ -3,6 +3,10 @@
         Private idbarang As Int32
         Private idpaket As Int32
 
+        Sub New()
+
+        End Sub
+
         Sub New(ByVal idbar As Int32, ByVal idpak As Int32)
             idbarang = idbar
             idpaket = idpak
