@@ -1,10 +1,14 @@
 ﻿
 Namespace BussinessObject.Common
-    Public Class booking
+    Public Class Booking
         Private idbooking As Int32
         Private tglbooking As Date
         Private info As String
         Private isdelete As Boolean
+
+        Public Sub New()
+
+        End Sub
 
         Sub New(ByVal idbook As Int32, ByVal tglbook As Date, ByVal inf As String, ByVal isdel As Boolean)
             idbooking = idbook
