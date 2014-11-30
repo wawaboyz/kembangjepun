@@ -18,6 +18,7 @@
             isdelete = isdel
             treat = treatment
             penjualan = pen
+            'test
         End Sub
 
         Public Overridable Property eidvoucher() As Int32
