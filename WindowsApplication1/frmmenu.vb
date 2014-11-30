@@ -33,13 +33,7 @@
     Private Sub LOGOUTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LOGOUTToolStripMenuItem.Click
         If (MessageBox.Show("ANDA YAKIN MAU KELUAR?", "KELUAR SISTEM", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes) Then
             Me.Close()
-
-
         End If
-    End Sub
-
-    Private Sub frmmenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub PEMBELIANToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PEMBELIANToolStripMenuItem.Click
