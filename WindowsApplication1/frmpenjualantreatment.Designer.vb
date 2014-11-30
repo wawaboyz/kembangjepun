@@ -25,7 +25,6 @@ Partial Class frmpenjualantreatment
         Me.grouppenjualantreatment = New System.Windows.Forms.GroupBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.lblpelanggan = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.lbltanggal = New System.Windows.Forms.Label()
@@ -52,12 +51,6 @@ Partial Class frmpenjualantreatment
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.grpdttransaksi = New System.Windows.Forms.GroupBox()
         Me.dttransaksi = New System.Windows.Forms.DataGridView()
-        Me.rowtreatment = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowtherapist = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowjam = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowjumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowharga = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowsubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTAX = New System.Windows.Forms.Label()
         Me.lbldiskon = New System.Windows.Forms.Label()
         Me.lblgrandtotal = New System.Windows.Forms.Label()
@@ -67,6 +60,16 @@ Partial Class frmpenjualantreatment
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.cbvoucher = New System.Windows.Forms.ComboBox()
+        Me.lblvoucher = New System.Windows.Forms.Label()
+        Me.rowtreatment = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowtherapist = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.novoucher = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowjam = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowjumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowharga = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowsubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.datetransaksi = New System.Windows.Forms.DateTimePicker()
         Me.grouppenjualantreatment.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grppembayaran.SuspendLayout()
@@ -76,9 +79,9 @@ Partial Class frmpenjualantreatment
         '
         'grouppenjualantreatment
         '
+        Me.grouppenjualantreatment.Controls.Add(Me.datetransaksi)
         Me.grouppenjualantreatment.Controls.Add(Me.TextBox4)
         Me.grouppenjualantreatment.Controls.Add(Me.lblpelanggan)
-        Me.grouppenjualantreatment.Controls.Add(Me.TextBox3)
         Me.grouppenjualantreatment.Controls.Add(Me.TextBox2)
         Me.grouppenjualantreatment.Controls.Add(Me.TextBox1)
         Me.grouppenjualantreatment.Controls.Add(Me.lbltanggal)
@@ -86,7 +89,7 @@ Partial Class frmpenjualantreatment
         Me.grouppenjualantreatment.Controls.Add(Me.lblidpenjualan)
         Me.grouppenjualantreatment.Location = New System.Drawing.Point(12, 12)
         Me.grouppenjualantreatment.Name = "grouppenjualantreatment"
-        Me.grouppenjualantreatment.Size = New System.Drawing.Size(842, 85)
+        Me.grouppenjualantreatment.Size = New System.Drawing.Size(831, 85)
         Me.grouppenjualantreatment.TabIndex = 0
         Me.grouppenjualantreatment.TabStop = False
         '
@@ -105,13 +108,6 @@ Partial Class frmpenjualantreatment
         Me.lblpelanggan.Size = New System.Drawing.Size(73, 13)
         Me.lblpelanggan.TabIndex = 6
         Me.lblpelanggan.Text = "PELANGGAN"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(611, 26)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(133, 20)
-        Me.TextBox3.TabIndex = 5
         '
         'TextBox2
         '
@@ -156,6 +152,8 @@ Partial Class frmpenjualantreatment
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbvoucher)
+        Me.GroupBox1.Controls.Add(Me.lblvoucher)
         Me.GroupBox1.Controls.Add(Me.btntambah)
         Me.GroupBox1.Controls.Add(Me.cbtherapist)
         Me.GroupBox1.Controls.Add(Me.cbtreatment)
@@ -170,14 +168,14 @@ Partial Class frmpenjualantreatment
         Me.GroupBox1.Controls.Add(Me.lbltreatment)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 103)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(407, 190)
+        Me.GroupBox1.Size = New System.Drawing.Size(831, 136)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "TREATMENT"
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(130, 147)
+        Me.btntambah.Location = New System.Drawing.Point(233, 102)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(133, 23)
         Me.btntambah.TabIndex = 12
@@ -187,7 +185,7 @@ Partial Class frmpenjualantreatment
         'cbtherapist
         '
         Me.cbtherapist.FormattingEnabled = True
-        Me.cbtherapist.Location = New System.Drawing.Point(123, 120)
+        Me.cbtherapist.Location = New System.Drawing.Point(403, 48)
         Me.cbtherapist.Name = "cbtherapist"
         Me.cbtherapist.Size = New System.Drawing.Size(196, 21)
         Me.cbtherapist.TabIndex = 11
@@ -203,7 +201,7 @@ Partial Class frmpenjualantreatment
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(120, 103)
+        Me.Label2.Location = New System.Drawing.Point(400, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(21, 13)
         Me.Label2.TabIndex = 9
@@ -212,7 +210,7 @@ Partial Class frmpenjualantreatment
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 123)
+        Me.Label1.Location = New System.Drawing.Point(320, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 8
@@ -220,7 +218,7 @@ Partial Class frmpenjualantreatment
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(145, 97)
+        Me.TextBox5.Location = New System.Drawing.Point(425, 25)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(118, 20)
         Me.TextBox5.TabIndex = 7
@@ -230,7 +228,7 @@ Partial Class frmpenjualantreatment
         'lblharga
         '
         Me.lblharga.AutoSize = True
-        Me.lblharga.Location = New System.Drawing.Point(53, 101)
+        Me.lblharga.Location = New System.Drawing.Point(341, 29)
         Me.lblharga.Name = "lblharga"
         Me.lblharga.Size = New System.Drawing.Size(45, 13)
         Me.lblharga.TabIndex = 6
@@ -284,9 +282,9 @@ Partial Class frmpenjualantreatment
         Me.grppembayaran.Controls.Add(Me.RadioButton3)
         Me.grppembayaran.Controls.Add(Me.RadioButton2)
         Me.grppembayaran.Controls.Add(Me.RadioButton1)
-        Me.grppembayaran.Location = New System.Drawing.Point(437, 103)
+        Me.grppembayaran.Location = New System.Drawing.Point(12, 507)
         Me.grppembayaran.Name = "grppembayaran"
-        Me.grppembayaran.Size = New System.Drawing.Size(417, 164)
+        Me.grppembayaran.Size = New System.Drawing.Size(366, 101)
         Me.grppembayaran.TabIndex = 9
         Me.grppembayaran.TabStop = False
         Me.grppembayaran.Text = "PEMBAYARAN"
@@ -294,7 +292,7 @@ Partial Class frmpenjualantreatment
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(20, 119)
+        Me.RadioButton5.Location = New System.Drawing.Point(123, 46)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(78, 17)
         Me.RadioButton5.TabIndex = 4
@@ -304,7 +302,7 @@ Partial Class frmpenjualantreatment
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(20, 96)
+        Me.RadioButton4.Location = New System.Drawing.Point(123, 23)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(96, 17)
         Me.RadioButton4.TabIndex = 3
@@ -346,7 +344,7 @@ Partial Class frmpenjualantreatment
         'grpdttransaksi
         '
         Me.grpdttransaksi.Controls.Add(Me.dttransaksi)
-        Me.grpdttransaksi.Location = New System.Drawing.Point(12, 299)
+        Me.grpdttransaksi.Location = New System.Drawing.Point(12, 245)
         Me.grpdttransaksi.Name = "grpdttransaksi"
         Me.grpdttransaksi.Size = New System.Drawing.Size(832, 247)
         Me.grpdttransaksi.TabIndex = 10
@@ -356,11 +354,116 @@ Partial Class frmpenjualantreatment
         'dttransaksi
         '
         Me.dttransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dttransaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rowtreatment, Me.rowtherapist, Me.rowjam, Me.rowjumlah, Me.rowharga, Me.rowsubtotal})
+        Me.dttransaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.rowtreatment, Me.rowtherapist, Me.novoucher, Me.rowjam, Me.rowjumlah, Me.rowharga, Me.rowsubtotal})
         Me.dttransaksi.Location = New System.Drawing.Point(15, 19)
         Me.dttransaksi.Name = "dttransaksi"
+        Me.dttransaksi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dttransaksi.Size = New System.Drawing.Size(801, 211)
         Me.dttransaksi.TabIndex = 0
+        '
+        'lblTAX
+        '
+        Me.lblTAX.AutoSize = True
+        Me.lblTAX.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTAX.Location = New System.Drawing.Point(513, 547)
+        Me.lblTAX.Name = "lblTAX"
+        Me.lblTAX.Size = New System.Drawing.Size(61, 29)
+        Me.lblTAX.TabIndex = 11
+        Me.lblTAX.Text = "TAX"
+        '
+        'lbldiskon
+        '
+        Me.lbldiskon.AutoSize = True
+        Me.lbldiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbldiskon.Location = New System.Drawing.Point(440, 508)
+        Me.lbldiskon.Name = "lbldiskon"
+        Me.lbldiskon.Size = New System.Drawing.Size(139, 29)
+        Me.lbldiskon.TabIndex = 12
+        Me.lbldiskon.Text = "DISCOUNT"
+        '
+        'lblgrandtotal
+        '
+        Me.lblgrandtotal.AutoSize = True
+        Me.lblgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblgrandtotal.Location = New System.Drawing.Point(402, 583)
+        Me.lblgrandtotal.Name = "lblgrandtotal"
+        Me.lblgrandtotal.Size = New System.Drawing.Size(177, 29)
+        Me.lblgrandtotal.TabIndex = 13
+        Me.lblgrandtotal.Text = "GRANDTOTAL"
+        '
+        'txtdiskon
+        '
+        Me.txtdiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdiskon.Location = New System.Drawing.Point(646, 505)
+        Me.txtdiskon.Name = "txtdiskon"
+        Me.txtdiskon.Size = New System.Drawing.Size(180, 35)
+        Me.txtdiskon.TabIndex = 14
+        Me.txtdiskon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txttax
+        '
+        Me.txttax.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttax.Location = New System.Drawing.Point(646, 544)
+        Me.txttax.Name = "txttax"
+        Me.txttax.Size = New System.Drawing.Size(180, 35)
+        Me.txttax.TabIndex = 15
+        Me.txttax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtgrandtotal
+        '
+        Me.txtgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtgrandtotal.Location = New System.Drawing.Point(646, 583)
+        Me.txtgrandtotal.Name = "txtgrandtotal"
+        Me.txtgrandtotal.Size = New System.Drawing.Size(180, 31)
+        Me.txtgrandtotal.TabIndex = 16
+        Me.txtgrandtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(603, 508)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 29)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Rp"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(603, 550)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(44, 29)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Rp"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(603, 583)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(44, 29)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Rp"
+        '
+        'cbvoucher
+        '
+        Me.cbvoucher.FormattingEnabled = True
+        Me.cbvoucher.Location = New System.Drawing.Point(403, 77)
+        Me.cbvoucher.Name = "cbvoucher"
+        Me.cbvoucher.Size = New System.Drawing.Size(196, 21)
+        Me.cbvoucher.TabIndex = 14
+        '
+        'lblvoucher
+        '
+        Me.lblvoucher.AutoSize = True
+        Me.lblvoucher.Location = New System.Drawing.Point(304, 81)
+        Me.lblvoucher.Name = "lblvoucher"
+        Me.lblvoucher.Size = New System.Drawing.Size(82, 13)
+        Me.lblvoucher.TabIndex = 13
+        Me.lblvoucher.Text = "NO. VOUCHER"
         '
         'rowtreatment
         '
@@ -375,6 +478,13 @@ Partial Class frmpenjualantreatment
         Me.rowtherapist.Name = "rowtherapist"
         Me.rowtherapist.ReadOnly = True
         Me.rowtherapist.Width = 150
+        '
+        'novoucher
+        '
+        Me.novoucher.HeaderText = "NO VOUCHER"
+        Me.novoucher.Name = "novoucher"
+        Me.novoucher.ReadOnly = True
+        Me.novoucher.Width = 80
         '
         'rowjam
         '
@@ -404,99 +514,21 @@ Partial Class frmpenjualantreatment
         Me.rowsubtotal.ReadOnly = True
         Me.rowsubtotal.Width = 150
         '
-        'lblTAX
+        'datetransaksi
         '
-        Me.lblTAX.AutoSize = True
-        Me.lblTAX.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTAX.Location = New System.Drawing.Point(515, 602)
-        Me.lblTAX.Name = "lblTAX"
-        Me.lblTAX.Size = New System.Drawing.Size(61, 29)
-        Me.lblTAX.TabIndex = 11
-        Me.lblTAX.Text = "TAX"
-        '
-        'lbldiskon
-        '
-        Me.lbldiskon.AutoSize = True
-        Me.lbldiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbldiskon.Location = New System.Drawing.Point(442, 563)
-        Me.lbldiskon.Name = "lbldiskon"
-        Me.lbldiskon.Size = New System.Drawing.Size(139, 29)
-        Me.lbldiskon.TabIndex = 12
-        Me.lbldiskon.Text = "DISCOUNT"
-        '
-        'lblgrandtotal
-        '
-        Me.lblgrandtotal.AutoSize = True
-        Me.lblgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblgrandtotal.Location = New System.Drawing.Point(404, 638)
-        Me.lblgrandtotal.Name = "lblgrandtotal"
-        Me.lblgrandtotal.Size = New System.Drawing.Size(177, 29)
-        Me.lblgrandtotal.TabIndex = 13
-        Me.lblgrandtotal.Text = "GRANDTOTAL"
-        '
-        'txtdiskon
-        '
-        Me.txtdiskon.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdiskon.Location = New System.Drawing.Point(648, 560)
-        Me.txtdiskon.Name = "txtdiskon"
-        Me.txtdiskon.Size = New System.Drawing.Size(180, 35)
-        Me.txtdiskon.TabIndex = 14
-        Me.txtdiskon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txttax
-        '
-        Me.txttax.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txttax.Location = New System.Drawing.Point(648, 599)
-        Me.txttax.Name = "txttax"
-        Me.txttax.Size = New System.Drawing.Size(180, 35)
-        Me.txttax.TabIndex = 15
-        Me.txttax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtgrandtotal
-        '
-        Me.txtgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtgrandtotal.Location = New System.Drawing.Point(648, 638)
-        Me.txtgrandtotal.Name = "txtgrandtotal"
-        Me.txtgrandtotal.Size = New System.Drawing.Size(180, 31)
-        Me.txtgrandtotal.TabIndex = 16
-        Me.txtgrandtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(605, 563)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 29)
-        Me.Label3.TabIndex = 17
-        Me.Label3.Text = "Rp"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(605, 605)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 29)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Rp"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(605, 638)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(44, 29)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Rp"
+        Me.datetransaksi.Location = New System.Drawing.Point(611, 24)
+        Me.datetransaksi.MinDate = New Date(2014, 1, 1, 0, 0, 0, 0)
+        Me.datetransaksi.Name = "datetransaksi"
+        Me.datetransaksi.Size = New System.Drawing.Size(200, 20)
+        Me.datetransaksi.TabIndex = 8
         '
         'frmpenjualantreatment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(943, 689)
+        Me.ClientSize = New System.Drawing.Size(855, 628)
         Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.grppembayaran)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtgrandtotal)
@@ -506,7 +538,6 @@ Partial Class frmpenjualantreatment
         Me.Controls.Add(Me.lbldiskon)
         Me.Controls.Add(Me.lblTAX)
         Me.Controls.Add(Me.grpdttransaksi)
-        Me.Controls.Add(Me.grppembayaran)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.grouppenjualantreatment)
         Me.Name = "frmpenjualantreatment"
@@ -529,7 +560,6 @@ Partial Class frmpenjualantreatment
     Friend WithEvents lbltanggal As System.Windows.Forms.Label
     Friend WithEvents lblnamacustomer As System.Windows.Forms.Label
     Friend WithEvents lblidpenjualan As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents lblpelanggan As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
@@ -553,12 +583,6 @@ Partial Class frmpenjualantreatment
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents grpdttransaksi As System.Windows.Forms.GroupBox
     Friend WithEvents dttransaksi As System.Windows.Forms.DataGridView
-    Friend WithEvents rowtreatment As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents rowtherapist As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents rowjam As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents rowjumlah As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents rowharga As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents rowsubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents lblTAX As System.Windows.Forms.Label
     Friend WithEvents lbldiskon As System.Windows.Forms.Label
     Friend WithEvents lblgrandtotal As System.Windows.Forms.Label
@@ -568,4 +592,14 @@ Partial Class frmpenjualantreatment
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents cbvoucher As System.Windows.Forms.ComboBox
+    Friend WithEvents lblvoucher As System.Windows.Forms.Label
+    Friend WithEvents rowtreatment As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents rowtherapist As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents novoucher As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents rowjam As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents rowjumlah As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents rowharga As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents rowsubtotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents datetransaksi As System.Windows.Forms.DateTimePicker
 End Class
