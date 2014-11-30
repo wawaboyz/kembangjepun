@@ -73,4 +73,5 @@ Public Class frmbarang
         textkosong()
         groupbarang.Enabled = False
     End Sub
+
 End Class
