@@ -33,6 +33,7 @@ Public Class frmjabatan
         Dim strmenu As String
         jabatan.enamajabatan = txtjabatan.Text
         jabatan.ekomisijabatan = txtkomisi.Text
+        strmenu = ""
 
         If (chkmaster.Checked = True) Then
             strmenu = String.Concat(strmenu, "1")
@@ -93,4 +94,6 @@ Public Class frmjabatan
         action = "new"
         groupjabatan.Enabled = True
     End Sub
+
+    
 End Class
