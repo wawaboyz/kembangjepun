@@ -8,13 +8,14 @@ Namespace BussinessObject.Common
         Private grandtotal As Decimal
         Private isdelete As Boolean
         Private iduser As User
-        Private pembelianbarang As NHibernate.Collection.PersistentSet
+        'Private pembelianbarang As NHibernate.Collection.PersistentSet
+        Private pembelianbarang As Iesi.Collections.Generic.ISet(Of PembelianBarang)
 
         Public Sub New()
-
+            pembelianbarang = New Iesi.Collections.Generic.HashedSet(Of PembelianBarang)
         End Sub
 
-        Sub New(ByVal idpem As Int32, ByVal tglpem As Date, ByVal namasupp As String, ByVal t As Int32, ByVal grandt As Decimal, ByVal isdel As Boolean, ByVal u As User, ByVal pembar As NHibernate.Collection.PersistentSet)
+        Sub New(ByVal idpem As Int32, ByVal tglpem As Date, ByVal namasupp As String, ByVal t As Int32, ByVal grandt As Decimal, ByVal isdel As Boolean, ByVal u As User, ByVal pembar As Iesi.Collections.Generic.ISet(Of PembelianBarang))
             idpembelian = idpem
             tglpembelian = tglpem
             namasupplier = namasupp
@@ -88,11 +89,19 @@ Namespace BussinessObject.Common
             End Set
         End Property
 
-        Public Overridable Property epembelianbarang() As NHibernate.Collection.Generic.PersistentGenericSet(Of PembelianBarang)
+        'Public Overridable Property epembelianbarang() As NHibernate.Collection.Generic.PersistentGenericSet(Of PembelianBarang)
+        '    Get
+        '        Return pembelianbarang
+        '    End Get
+        '    Set(value As NHibernate.Collection.Generic.PersistentGenericSet(Of PembelianBarang))
+        '        pembelianbarang = value
+        '    End Set
+        'End Property
+        Public Overridable Property epembelianbarang() As Iesi.Collections.Generic.ISet(Of PembelianBarang)
             Get
                 Return pembelianbarang
             End Get
-            Set(value As NHibernate.Collection.Generic.PersistentGenericSet(Of PembelianBarang))
+            Set(value As Iesi.Collections.Generic.ISet(Of PembelianBarang))
                 pembelianbarang = value
             End Set
         End Property
