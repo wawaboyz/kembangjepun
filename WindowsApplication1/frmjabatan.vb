@@ -96,4 +96,8 @@ Public Class frmjabatan
     End Sub
 
     
+    Private Sub txtcarijabatan_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcarijabatan.KeyUp
+        jabatanList = jabatanmanager.cariJabatan("%" + txtcarijabatan.Text + "%")
+        dglistjabatan.DataSource = jabatanList
+    End Sub
 End Class

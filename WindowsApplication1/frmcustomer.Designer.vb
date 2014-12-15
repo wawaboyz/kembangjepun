@@ -341,6 +341,7 @@ Partial Class frmcustomer
         Me.Controls.Add(Me.grouppelanggan)
         Me.Name = "frmcustomer"
         Me.Text = "frmcustomer"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dglistpelanggan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grouplistpelanggan.ResumeLayout(False)
         Me.grouplistpelanggan.PerformLayout()

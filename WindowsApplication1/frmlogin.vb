@@ -11,6 +11,8 @@ Public Class frmlogin
     Private usermanager As New BussinessObject.Manager.userManager
     Private jabatanManager As New BussinessObject.Manager.jabatanManager
     Private jabatanList As List(Of Jabatan)
+    Public userlist As userJabatan
+    Public user As User
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'CATATAN :
@@ -73,8 +75,9 @@ Public Class frmlogin
 
         Dim menu As New frmmenu
         Dim strmenu As String
-        Dim userlist As userJabatan
+
         userlist = usermanager.login(txtUser.Text, txtPass.Text)
+        user = usermanager.findByPrimaryKey(userlist.eiduser)
         strmenu = userlist.emenu.ToString
         Dim pjgstr As Integer
         Dim i As Integer
@@ -100,7 +103,6 @@ Public Class frmlogin
                 i = i + 1
 
 
-
             End While
 
             menu.ShowDialog()
@@ -111,8 +113,6 @@ Public Class frmlogin
         End If
 
 
-
-        'MessageBox.Show("success")
 
     End Sub
 End Class

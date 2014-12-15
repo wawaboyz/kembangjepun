@@ -64,4 +64,9 @@ Public Class frmtreatment
         textkosong()
         grouptreatment.Enabled = False
     End Sub
+
+    Private Sub txtcaritreatment_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcaritreatment.KeyUp
+        treatmentList = treatmentManager.cariTreatment("%" + txtcaritreatment.Text + "%")
+        dglisttreatment.DataSource = treatmentList
+    End Sub
 End Class

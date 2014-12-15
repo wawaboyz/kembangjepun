@@ -203,6 +203,7 @@ Partial Class frmtreatment
         Me.Controls.Add(Me.grouplisttreatment)
         Me.Name = "frmtreatment"
         Me.Text = "frmtreatment"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grouptreatment.ResumeLayout(False)
         Me.grouptreatment.PerformLayout()
         Me.grouplisttreatment.ResumeLayout(False)

@@ -38,7 +38,22 @@ Namespace BussinessObject.Manager
             Return listUserJabatan
         End Function
 
-    
+        Function cariPegawai(ByVal nmpegawai As String) As List(Of userJabatan)
+
+            openSession()
+            setTransaction()
+            Dim listuser As New List(Of User)
+            Dim listUserJabatan As New List(Of userJabatan)
+            listuser = getSession.CreateQuery("FROM User WHERE nama LIKE :nmpegawai").SetParameter("nmpegawai", nmpegawai).List.Cast(Of User)().ToList
+
+            For Each temp As User In listUser
+                listUserJabatan.Add(New userJabatan(temp))
+            Next
+            getTransaction.Commit()
+            getSession.Close()
+            Return listUserJabatan
+
+        End Function
     End Class
 
 

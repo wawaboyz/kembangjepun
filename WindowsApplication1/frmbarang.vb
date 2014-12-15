@@ -19,7 +19,6 @@ Public Class frmbarang
     End Sub
 
     Private Sub frmbarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         barangList = barangManager.selectAll
         dglistbarang.DataSource = barangList
         dglistbarang.Columns(6).Visible = False
@@ -74,4 +73,9 @@ Public Class frmbarang
         groupbarang.Enabled = False
     End Sub
 
+    Private Sub txtcaribarang_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcaribarang.KeyUp
+        barangList = barangManager.cariBarang("%" + txtcaribarang.Text + "%")
+        dglistbarang.DataSource = barangList
+
+    End Sub
 End Class

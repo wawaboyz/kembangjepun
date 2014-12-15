@@ -23,14 +23,15 @@ Partial Class frmpenjualantreatment
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grouppenjualantreatment = New System.Windows.Forms.GroupBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.lblpelanggan = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.datetransaksi = New System.Windows.Forms.DateTimePicker()
+        Me.txtpelangggan = New System.Windows.Forms.TextBox()
+        Me.txtidjual = New System.Windows.Forms.TextBox()
         Me.lbltanggal = New System.Windows.Forms.Label()
         Me.lblnamacustomer = New System.Windows.Forms.Label()
         Me.lblidpenjualan = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbvoucher = New System.Windows.Forms.ComboBox()
+        Me.lblvoucher = New System.Windows.Forms.Label()
         Me.btntambah = New System.Windows.Forms.Button()
         Me.cbtherapist = New System.Windows.Forms.ComboBox()
         Me.cbtreatment = New System.Windows.Forms.ComboBox()
@@ -38,19 +39,23 @@ Partial Class frmpenjualantreatment
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.lblharga = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.lbljum = New System.Windows.Forms.Label()
+        Me.txtjam = New System.Windows.Forms.TextBox()
         Me.lbljam = New System.Windows.Forms.Label()
         Me.lbltreatment = New System.Windows.Forms.Label()
         Me.grppembayaran = New System.Windows.Forms.GroupBox()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.grpdttransaksi = New System.Windows.Forms.GroupBox()
         Me.dttransaksi = New System.Windows.Forms.DataGridView()
+        Me.rowtreatment = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowtherapist = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.novoucher = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowjam = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowjumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowharga = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rowsubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTAX = New System.Windows.Forms.Label()
         Me.lbldiskon = New System.Windows.Forms.Label()
         Me.lblgrandtotal = New System.Windows.Forms.Label()
@@ -60,16 +65,6 @@ Partial Class frmpenjualantreatment
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cbvoucher = New System.Windows.Forms.ComboBox()
-        Me.lblvoucher = New System.Windows.Forms.Label()
-        Me.rowtreatment = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowtherapist = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.novoucher = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowjam = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowjumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowharga = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rowsubtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.datetransaksi = New System.Windows.Forms.DateTimePicker()
         Me.grouppenjualantreatment.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grppembayaran.SuspendLayout()
@@ -80,10 +75,8 @@ Partial Class frmpenjualantreatment
         'grouppenjualantreatment
         '
         Me.grouppenjualantreatment.Controls.Add(Me.datetransaksi)
-        Me.grouppenjualantreatment.Controls.Add(Me.TextBox4)
-        Me.grouppenjualantreatment.Controls.Add(Me.lblpelanggan)
-        Me.grouppenjualantreatment.Controls.Add(Me.TextBox2)
-        Me.grouppenjualantreatment.Controls.Add(Me.TextBox1)
+        Me.grouppenjualantreatment.Controls.Add(Me.txtpelangggan)
+        Me.grouppenjualantreatment.Controls.Add(Me.txtidjual)
         Me.grouppenjualantreatment.Controls.Add(Me.lbltanggal)
         Me.grouppenjualantreatment.Controls.Add(Me.lblnamacustomer)
         Me.grouppenjualantreatment.Controls.Add(Me.lblidpenjualan)
@@ -93,35 +86,28 @@ Partial Class frmpenjualantreatment
         Me.grouppenjualantreatment.TabIndex = 0
         Me.grouppenjualantreatment.TabStop = False
         '
-        'TextBox4
+        'datetransaksi
         '
-        Me.TextBox4.Location = New System.Drawing.Point(611, 50)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox4.TabIndex = 7
+        Me.datetransaksi.Location = New System.Drawing.Point(611, 24)
+        Me.datetransaksi.MinDate = New Date(2014, 1, 1, 0, 0, 0, 0)
+        Me.datetransaksi.Name = "datetransaksi"
+        Me.datetransaksi.Size = New System.Drawing.Size(188, 20)
+        Me.datetransaksi.TabIndex = 8
         '
-        'lblpelanggan
+        'txtpelangggan
         '
-        Me.lblpelanggan.AutoSize = True
-        Me.lblpelanggan.Location = New System.Drawing.Point(519, 50)
-        Me.lblpelanggan.Name = "lblpelanggan"
-        Me.lblpelanggan.Size = New System.Drawing.Size(73, 13)
-        Me.lblpelanggan.TabIndex = 6
-        Me.lblpelanggan.Text = "PELANGGAN"
+        Me.txtpelangggan.Location = New System.Drawing.Point(123, 50)
+        Me.txtpelangggan.Name = "txtpelangggan"
+        Me.txtpelangggan.Size = New System.Drawing.Size(196, 20)
+        Me.txtpelangggan.TabIndex = 4
         '
-        'TextBox2
+        'txtidjual
         '
-        Me.TextBox2.Location = New System.Drawing.Point(123, 48)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(196, 20)
-        Me.TextBox2.TabIndex = 4
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(123, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.txtidjual.Location = New System.Drawing.Point(123, 24)
+        Me.txtidjual.Name = "txtidjual"
+        Me.txtidjual.ReadOnly = True
+        Me.txtidjual.Size = New System.Drawing.Size(100, 20)
+        Me.txtidjual.TabIndex = 3
         '
         'lbltanggal
         '
@@ -161,9 +147,7 @@ Partial Class frmpenjualantreatment
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox5)
         Me.GroupBox1.Controls.Add(Me.lblharga)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
-        Me.GroupBox1.Controls.Add(Me.TextBox7)
-        Me.GroupBox1.Controls.Add(Me.lbljum)
+        Me.GroupBox1.Controls.Add(Me.txtjam)
         Me.GroupBox1.Controls.Add(Me.lbljam)
         Me.GroupBox1.Controls.Add(Me.lbltreatment)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 103)
@@ -173,9 +157,26 @@ Partial Class frmpenjualantreatment
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "TREATMENT"
         '
+        'cbvoucher
+        '
+        Me.cbvoucher.FormattingEnabled = True
+        Me.cbvoucher.Location = New System.Drawing.Point(404, 53)
+        Me.cbvoucher.Name = "cbvoucher"
+        Me.cbvoucher.Size = New System.Drawing.Size(135, 21)
+        Me.cbvoucher.TabIndex = 14
+        '
+        'lblvoucher
+        '
+        Me.lblvoucher.AutoSize = True
+        Me.lblvoucher.Location = New System.Drawing.Point(303, 57)
+        Me.lblvoucher.Name = "lblvoucher"
+        Me.lblvoucher.Size = New System.Drawing.Size(82, 13)
+        Me.lblvoucher.TabIndex = 13
+        Me.lblvoucher.Text = "NO. VOUCHER"
+        '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(233, 102)
+        Me.btntambah.Location = New System.Drawing.Point(243, 107)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(133, 23)
         Me.btntambah.TabIndex = 12
@@ -185,7 +186,7 @@ Partial Class frmpenjualantreatment
         'cbtherapist
         '
         Me.cbtherapist.FormattingEnabled = True
-        Me.cbtherapist.Location = New System.Drawing.Point(403, 48)
+        Me.cbtherapist.Location = New System.Drawing.Point(402, 27)
         Me.cbtherapist.Name = "cbtherapist"
         Me.cbtherapist.Size = New System.Drawing.Size(196, 21)
         Me.cbtherapist.TabIndex = 11
@@ -201,7 +202,7 @@ Partial Class frmpenjualantreatment
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(400, 31)
+        Me.Label2.Location = New System.Drawing.Point(99, 81)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(21, 13)
         Me.Label2.TabIndex = 9
@@ -210,7 +211,7 @@ Partial Class frmpenjualantreatment
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(320, 52)
+        Me.Label1.Location = New System.Drawing.Point(319, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 8
@@ -218,7 +219,7 @@ Partial Class frmpenjualantreatment
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(425, 25)
+        Me.TextBox5.Location = New System.Drawing.Point(124, 75)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(118, 20)
         Me.TextBox5.TabIndex = 7
@@ -228,34 +229,18 @@ Partial Class frmpenjualantreatment
         'lblharga
         '
         Me.lblharga.AutoSize = True
-        Me.lblharga.Location = New System.Drawing.Point(341, 29)
+        Me.lblharga.Location = New System.Drawing.Point(40, 79)
         Me.lblharga.Name = "lblharga"
         Me.lblharga.Size = New System.Drawing.Size(45, 13)
         Me.lblharga.TabIndex = 6
         Me.lblharga.Text = "HARGA"
         '
-        'TextBox6
+        'txtjam
         '
-        Me.TextBox6.Location = New System.Drawing.Point(123, 74)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox6.TabIndex = 5
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(123, 48)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(35, 20)
-        Me.TextBox7.TabIndex = 4
-        '
-        'lbljum
-        '
-        Me.lbljum.AutoSize = True
-        Me.lbljum.Location = New System.Drawing.Point(49, 77)
-        Me.lbljum.Name = "lbljum"
-        Me.lbljum.Size = New System.Drawing.Size(50, 13)
-        Me.lbljum.TabIndex = 2
-        Me.lbljum.Text = "JUMLAH"
+        Me.txtjam.Location = New System.Drawing.Point(123, 48)
+        Me.txtjam.Name = "txtjam"
+        Me.txtjam.Size = New System.Drawing.Size(35, 20)
+        Me.txtjam.TabIndex = 4
         '
         'lbljam
         '
@@ -277,7 +262,6 @@ Partial Class frmpenjualantreatment
         '
         'grppembayaran
         '
-        Me.grppembayaran.Controls.Add(Me.RadioButton5)
         Me.grppembayaran.Controls.Add(Me.RadioButton4)
         Me.grppembayaran.Controls.Add(Me.RadioButton3)
         Me.grppembayaran.Controls.Add(Me.RadioButton2)
@@ -288,16 +272,6 @@ Partial Class frmpenjualantreatment
         Me.grppembayaran.TabIndex = 9
         Me.grppembayaran.TabStop = False
         Me.grppembayaran.Text = "PEMBAYARAN"
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(123, 46)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(78, 17)
-        Me.RadioButton5.TabIndex = 4
-        Me.RadioButton5.Text = "VOUCHER"
-        Me.RadioButton5.UseVisualStyleBackColor = True
         '
         'RadioButton4
         '
@@ -360,6 +334,55 @@ Partial Class frmpenjualantreatment
         Me.dttransaksi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dttransaksi.Size = New System.Drawing.Size(801, 211)
         Me.dttransaksi.TabIndex = 0
+        '
+        'rowtreatment
+        '
+        Me.rowtreatment.HeaderText = "TREATMENT"
+        Me.rowtreatment.Name = "rowtreatment"
+        Me.rowtreatment.ReadOnly = True
+        Me.rowtreatment.Width = 150
+        '
+        'rowtherapist
+        '
+        Me.rowtherapist.HeaderText = "THERAPIST"
+        Me.rowtherapist.Name = "rowtherapist"
+        Me.rowtherapist.ReadOnly = True
+        Me.rowtherapist.Width = 150
+        '
+        'novoucher
+        '
+        Me.novoucher.HeaderText = "NO VOUCHER"
+        Me.novoucher.Name = "novoucher"
+        Me.novoucher.ReadOnly = True
+        Me.novoucher.Width = 80
+        '
+        'rowjam
+        '
+        Me.rowjam.HeaderText = "JAM"
+        Me.rowjam.Name = "rowjam"
+        Me.rowjam.ReadOnly = True
+        Me.rowjam.Width = 40
+        '
+        'rowjumlah
+        '
+        Me.rowjumlah.HeaderText = "JUMLAH"
+        Me.rowjumlah.Name = "rowjumlah"
+        Me.rowjumlah.ReadOnly = True
+        Me.rowjumlah.Width = 80
+        '
+        'rowharga
+        '
+        Me.rowharga.HeaderText = "HARGA"
+        Me.rowharga.Name = "rowharga"
+        Me.rowharga.ReadOnly = True
+        Me.rowharga.Width = 130
+        '
+        'rowsubtotal
+        '
+        Me.rowsubtotal.HeaderText = "SUBTOTAL"
+        Me.rowsubtotal.Name = "rowsubtotal"
+        Me.rowsubtotal.ReadOnly = True
+        Me.rowsubtotal.Width = 150
         '
         'lblTAX
         '
@@ -448,85 +471,11 @@ Partial Class frmpenjualantreatment
         Me.Label5.TabIndex = 19
         Me.Label5.Text = "Rp"
         '
-        'cbvoucher
-        '
-        Me.cbvoucher.FormattingEnabled = True
-        Me.cbvoucher.Location = New System.Drawing.Point(403, 77)
-        Me.cbvoucher.Name = "cbvoucher"
-        Me.cbvoucher.Size = New System.Drawing.Size(196, 21)
-        Me.cbvoucher.TabIndex = 14
-        '
-        'lblvoucher
-        '
-        Me.lblvoucher.AutoSize = True
-        Me.lblvoucher.Location = New System.Drawing.Point(304, 81)
-        Me.lblvoucher.Name = "lblvoucher"
-        Me.lblvoucher.Size = New System.Drawing.Size(82, 13)
-        Me.lblvoucher.TabIndex = 13
-        Me.lblvoucher.Text = "NO. VOUCHER"
-        '
-        'rowtreatment
-        '
-        Me.rowtreatment.HeaderText = "TREATMENT"
-        Me.rowtreatment.Name = "rowtreatment"
-        Me.rowtreatment.ReadOnly = True
-        Me.rowtreatment.Width = 150
-        '
-        'rowtherapist
-        '
-        Me.rowtherapist.HeaderText = "THERAPIST"
-        Me.rowtherapist.Name = "rowtherapist"
-        Me.rowtherapist.ReadOnly = True
-        Me.rowtherapist.Width = 150
-        '
-        'novoucher
-        '
-        Me.novoucher.HeaderText = "NO VOUCHER"
-        Me.novoucher.Name = "novoucher"
-        Me.novoucher.ReadOnly = True
-        Me.novoucher.Width = 80
-        '
-        'rowjam
-        '
-        Me.rowjam.HeaderText = "JAM"
-        Me.rowjam.Name = "rowjam"
-        Me.rowjam.ReadOnly = True
-        Me.rowjam.Width = 40
-        '
-        'rowjumlah
-        '
-        Me.rowjumlah.HeaderText = "JUMLAH"
-        Me.rowjumlah.Name = "rowjumlah"
-        Me.rowjumlah.ReadOnly = True
-        Me.rowjumlah.Width = 80
-        '
-        'rowharga
-        '
-        Me.rowharga.HeaderText = "HARGA"
-        Me.rowharga.Name = "rowharga"
-        Me.rowharga.ReadOnly = True
-        Me.rowharga.Width = 130
-        '
-        'rowsubtotal
-        '
-        Me.rowsubtotal.HeaderText = "SUBTOTAL"
-        Me.rowsubtotal.Name = "rowsubtotal"
-        Me.rowsubtotal.ReadOnly = True
-        Me.rowsubtotal.Width = 150
-        '
-        'datetransaksi
-        '
-        Me.datetransaksi.Location = New System.Drawing.Point(611, 24)
-        Me.datetransaksi.MinDate = New Date(2014, 1, 1, 0, 0, 0, 0)
-        Me.datetransaksi.Name = "datetransaksi"
-        Me.datetransaksi.Size = New System.Drawing.Size(200, 20)
-        Me.datetransaksi.TabIndex = 8
-        '
         'frmpenjualantreatment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(855, 628)
+        Me.ClientSize = New System.Drawing.Size(863, 641)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.grppembayaran)
         Me.Controls.Add(Me.Label4)
@@ -542,6 +491,7 @@ Partial Class frmpenjualantreatment
         Me.Controls.Add(Me.grouppenjualantreatment)
         Me.Name = "frmpenjualantreatment"
         Me.Text = "frmpenjualantreatment"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grouppenjualantreatment.ResumeLayout(False)
         Me.grouppenjualantreatment.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -555,20 +505,16 @@ Partial Class frmpenjualantreatment
 
     End Sub
     Friend WithEvents grouppenjualantreatment As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtpelangggan As System.Windows.Forms.TextBox
+    Friend WithEvents txtidjual As System.Windows.Forms.TextBox
     Friend WithEvents lbltanggal As System.Windows.Forms.Label
     Friend WithEvents lblnamacustomer As System.Windows.Forms.Label
     Friend WithEvents lblidpenjualan As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents lblpelanggan As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
     Friend WithEvents lblharga As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents lbljum As System.Windows.Forms.Label
+    Friend WithEvents txtjam As System.Windows.Forms.TextBox
     Friend WithEvents lbljam As System.Windows.Forms.Label
     Friend WithEvents lbltreatment As System.Windows.Forms.Label
     Friend WithEvents cbtherapist As System.Windows.Forms.ComboBox
@@ -576,7 +522,6 @@ Partial Class frmpenjualantreatment
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btntambah As System.Windows.Forms.Button
     Friend WithEvents grppembayaran As System.Windows.Forms.GroupBox
-    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton

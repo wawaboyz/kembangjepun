@@ -53,10 +53,12 @@ Partial Class frmpembelian
         Me.chktax = New System.Windows.Forms.CheckBox()
         Me.lbltax = New System.Windows.Forms.Label()
         Me.lblgrandtotal = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txttax = New System.Windows.Forms.TextBox()
+        Me.txtgrandtotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnsimpan = New System.Windows.Forms.Button()
+        Me.btnbatal = New System.Windows.Forms.Button()
         Me.grpdatapembelian.SuspendLayout()
         Me.grouplistbarang.SuspendLayout()
         CType(Me.dglistbarang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,12 +86,12 @@ Partial Class frmpembelian
         '
         Me.txtsupplier.Location = New System.Drawing.Point(119, 96)
         Me.txtsupplier.Name = "txtsupplier"
-        Me.txtsupplier.Size = New System.Drawing.Size(326, 20)
+        Me.txtsupplier.Size = New System.Drawing.Size(312, 20)
         Me.txtsupplier.TabIndex = 6
         '
         'datebeli
         '
-        Me.datebeli.Location = New System.Drawing.Point(119, 62)
+        Me.datebeli.Location = New System.Drawing.Point(119, 63)
         Me.datebeli.MinDate = New Date(2014, 1, 1, 0, 0, 0, 0)
         Me.datebeli.Name = "datebeli"
         Me.datebeli.Size = New System.Drawing.Size(200, 20)
@@ -99,6 +101,7 @@ Partial Class frmpembelian
         '
         Me.txtidbeli.Location = New System.Drawing.Point(119, 33)
         Me.txtidbeli.Name = "txtidbeli"
+        Me.txtidbeli.ReadOnly = True
         Me.txtidbeli.Size = New System.Drawing.Size(84, 20)
         Me.txtidbeli.TabIndex = 4
         '
@@ -365,27 +368,27 @@ Partial Class frmpembelian
         Me.lblgrandtotal.TabIndex = 5
         Me.lblgrandtotal.Text = "GRAND TOTAL"
         '
-        'TextBox6
+        'txttax
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(651, 581)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(185, 31)
-        Me.TextBox6.TabIndex = 6
-        Me.TextBox6.Text = "0"
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txttax.Enabled = False
+        Me.txttax.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttax.Location = New System.Drawing.Point(651, 581)
+        Me.txttax.Name = "txttax"
+        Me.txttax.Size = New System.Drawing.Size(185, 31)
+        Me.txttax.TabIndex = 6
+        Me.txttax.Text = "0"
+        Me.txttax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TextBox7
+        'txtgrandtotal
         '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(651, 618)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(186, 31)
-        Me.TextBox7.TabIndex = 7
-        Me.TextBox7.Text = "0"
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtgrandtotal.Enabled = False
+        Me.txtgrandtotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtgrandtotal.Location = New System.Drawing.Point(651, 618)
+        Me.txtgrandtotal.Name = "txtgrandtotal"
+        Me.txtgrandtotal.Size = New System.Drawing.Size(186, 31)
+        Me.txtgrandtotal.TabIndex = 7
+        Me.txtgrandtotal.Text = "0"
+        Me.txtgrandtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
@@ -407,16 +410,36 @@ Partial Class frmpembelian
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Rp"
         '
+        'btnsimpan
+        '
+        Me.btnsimpan.Location = New System.Drawing.Point(866, 441)
+        Me.btnsimpan.Name = "btnsimpan"
+        Me.btnsimpan.Size = New System.Drawing.Size(75, 23)
+        Me.btnsimpan.TabIndex = 10
+        Me.btnsimpan.Text = "SIMPAN"
+        Me.btnsimpan.UseVisualStyleBackColor = True
+        '
+        'btnbatal
+        '
+        Me.btnbatal.Location = New System.Drawing.Point(866, 483)
+        Me.btnbatal.Name = "btnbatal"
+        Me.btnbatal.Size = New System.Drawing.Size(75, 23)
+        Me.btnbatal.TabIndex = 11
+        Me.btnbatal.Text = "BATAL"
+        Me.btnbatal.UseVisualStyleBackColor = True
+        '
         'frmpembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(953, 664)
+        Me.ClientSize = New System.Drawing.Size(953, 675)
+        Me.Controls.Add(Me.btnbatal)
+        Me.Controls.Add(Me.btnsimpan)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.txtgrandtotal)
+        Me.Controls.Add(Me.txttax)
         Me.Controls.Add(Me.lblgrandtotal)
         Me.Controls.Add(Me.lbltax)
         Me.Controls.Add(Me.chktax)
@@ -426,6 +449,7 @@ Partial Class frmpembelian
         Me.Controls.Add(Me.grpdatapembelian)
         Me.Name = "frmpembelian"
         Me.Text = "frmpembelian"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grpdatapembelian.ResumeLayout(False)
         Me.grpdatapembelian.PerformLayout()
         Me.grouplistbarang.ResumeLayout(False)
@@ -467,11 +491,13 @@ Partial Class frmpembelian
     Friend WithEvents chktax As System.Windows.Forms.CheckBox
     Friend WithEvents lbltax As System.Windows.Forms.Label
     Friend WithEvents lblgrandtotal As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents txttax As System.Windows.Forms.TextBox
+    Friend WithEvents txtgrandtotal As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btntambahbarang As System.Windows.Forms.Button
     Friend WithEvents btndelete As System.Windows.Forms.Button
     Friend WithEvents dgtransaksi As System.Windows.Forms.DataGridView
+    Friend WithEvents btnsimpan As System.Windows.Forms.Button
+    Friend WithEvents btnbatal As System.Windows.Forms.Button
 End Class

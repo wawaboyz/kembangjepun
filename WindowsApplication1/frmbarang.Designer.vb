@@ -260,6 +260,7 @@ Partial Class frmbarang
         Me.Controls.Add(Me.grouplistbarang)
         Me.Name = "frmbarang"
         Me.Text = "frmbarang"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dglistbarang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupbarang.ResumeLayout(False)
         Me.groupbarang.PerformLayout()

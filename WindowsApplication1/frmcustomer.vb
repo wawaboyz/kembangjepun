@@ -24,7 +24,6 @@ Public Class frmcustomer
         customerList = customerManager.selectAll
         dglistpelanggan.DataSource = customerList
 
-
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -91,4 +90,8 @@ Public Class frmcustomer
     End Sub
 
     
+    Private Sub txtcaripelanggan_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcaripelanggan.KeyUp
+        customerList = customerManager.cariCustomer("%" + txtcaripelanggan.Text + "%")
+        dglistpelanggan.DataSource = customerList
+    End Sub
 End Class
