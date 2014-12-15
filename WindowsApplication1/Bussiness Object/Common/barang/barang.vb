@@ -12,7 +12,7 @@ Namespace BussinessObject.Common
         Private hargajual As Decimal
         Private isdelete As Boolean
         Private barangpaket As NHibernate.Collection.PersistentSet
-        Private pembelianbarang As NHibernate.Collection.PersistentSet
+        Private pembelianbarang As Iesi.Collections.Generic.ISet(Of PembelianBarang)
         Private stokadjustmentbarang As NHibernate.Collection.PersistentSet
 
         Public Sub New()
@@ -112,11 +112,11 @@ Namespace BussinessObject.Common
             End Set
         End Property
 
-        Public Overridable Property epembelianbarang() As NHibernate.Collection.Generic.PersistentGenericSet(Of PembelianBarang)
+        Public Overridable Property epembelianbarang() As Iesi.Collections.Generic.ISet(Of PembelianBarang)
             Get
                 Return pembelianbarang
             End Get
-            Set(value As NHibernate.Collection.Generic.PersistentGenericSet(Of PembelianBarang))
+            Set(value As Iesi.Collections.Generic.ISet(Of PembelianBarang))
                 pembelianbarang = value
             End Set
         End Property
