@@ -7,6 +7,10 @@ Namespace BussinessObject.Common
         Private paketSet As Paket
         Private penjualanSet As Penjualan
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpakpen As PaketPenjualanId, ByVal har As Decimal, ByVal jum As Int32, ByVal paketS As Paket, ByVal PenS As Penjualan)
             idpaketpenjualan = idpakpen
             harga = har

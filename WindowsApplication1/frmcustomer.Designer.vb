@@ -45,11 +45,11 @@ Partial Class frmcustomer
         Me.dglistpelanggan = New System.Windows.Forms.DataGridView()
         Me.grouplistpelanggan = New System.Windows.Forms.GroupBox()
         Me.grouppelanggan = New System.Windows.Forms.GroupBox()
+        Me.dttgllahir = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rdperempuan = New System.Windows.Forms.RadioButton()
         Me.rdlaki = New System.Windows.Forms.RadioButton()
-        Me.dttgllahir = New System.Windows.Forms.DateTimePicker()
         CType(Me.dglistpelanggan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grouplistpelanggan.SuspendLayout()
         Me.grouppelanggan.SuspendLayout()
@@ -281,6 +281,15 @@ Partial Class frmcustomer
         Me.grouppelanggan.TabStop = False
         Me.grouppelanggan.Text = "PELANGGAN"
         '
+        'dttgllahir
+        '
+        Me.dttgllahir.Location = New System.Drawing.Point(157, 162)
+        Me.dttgllahir.MinDate = New Date(2014, 1, 1, 0, 0, 0, 0)
+        Me.dttgllahir.Name = "dttgllahir"
+        Me.dttgllahir.Size = New System.Drawing.Size(200, 20)
+        Me.dttgllahir.TabIndex = 51
+        Me.dttgllahir.Value = New Date(2014, 11, 12, 15, 32, 58, 0)
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.rdnonaktif)
@@ -323,15 +332,6 @@ Partial Class frmcustomer
         Me.rdlaki.Text = "LAKI-LAKI"
         Me.rdlaki.UseVisualStyleBackColor = True
         '
-        'dttgllahir
-        '
-        Me.dttgllahir.Location = New System.Drawing.Point(157, 162)
-        Me.dttgllahir.MinDate = New Date(2014, 1, 1, 0, 0, 0, 0)
-        Me.dttgllahir.Name = "dttgllahir"
-        Me.dttgllahir.Size = New System.Drawing.Size(200, 20)
-        Me.dttgllahir.TabIndex = 51
-        Me.dttgllahir.Value = New Date(2014, 11, 12, 15, 32, 58, 0)
-        '
         'frmcustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -341,6 +341,7 @@ Partial Class frmcustomer
         Me.Controls.Add(Me.grouppelanggan)
         Me.Name = "frmcustomer"
         Me.Text = "frmcustomer"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dglistpelanggan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grouplistpelanggan.ResumeLayout(False)
         Me.grouplistpelanggan.PerformLayout()

@@ -33,6 +33,8 @@ Partial Class frmmenu
         Me.LAPORANToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LOGOUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.TREATMENTToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VOUCHERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,6 +78,7 @@ Partial Class frmmenu
         '
         'PENJUALANToolStripMenuItem
         '
+        Me.PENJUALANToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TREATMENTToolStripMenuItem1, Me.VOUCHERToolStripMenuItem})
         Me.PENJUALANToolStripMenuItem.Name = "PENJUALANToolStripMenuItem"
         Me.PENJUALANToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.PENJUALANToolStripMenuItem.Text = "PENJUALAN"
@@ -103,12 +106,24 @@ Partial Class frmmenu
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MASTERToolStripMenuItem, Me.PENJUALANToolStripMenuItem, Me.PEMBELIANToolStripMenuItem, Me.LAPORANToolStripMenuItem, Me.LOGOUTToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MASTERToolStripMenuItem, Me.PEMBELIANToolStripMenuItem, Me.PENJUALANToolStripMenuItem, Me.LAPORANToolStripMenuItem, Me.LOGOUTToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(618, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'TREATMENTToolStripMenuItem1
+        '
+        Me.TREATMENTToolStripMenuItem1.Name = "TREATMENTToolStripMenuItem1"
+        Me.TREATMENTToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.TREATMENTToolStripMenuItem1.Text = "TREATMENT"
+        '
+        'VOUCHERToolStripMenuItem
+        '
+        Me.VOUCHERToolStripMenuItem.Name = "VOUCHERToolStripMenuItem"
+        Me.VOUCHERToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VOUCHERToolStripMenuItem.Text = "VOUCHER"
         '
         'frmmenu
         '
@@ -137,4 +152,6 @@ Partial Class frmmenu
     Friend WithEvents LAPORANToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LOGOUTToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents TREATMENTToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VOUCHERToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

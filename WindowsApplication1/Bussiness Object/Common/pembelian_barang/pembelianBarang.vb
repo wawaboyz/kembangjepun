@@ -2,11 +2,17 @@
 Namespace BussinessObject.Common
     Public Class PembelianBarang
         Private idpembelianbarang As PembelianBarangId
+        Private idpembelian As Int32
+        Private idbarang As Int32
         Private jumlah As Int32
         Private harga As Decimal
         Private subtotal As Decimal
         Private pembelianSet As Pembelian
         Private barangSet As Barang
+
+        Public Sub New()
+            'idpembelianbarang = New PembelianBarangId
+        End Sub
 
         Sub New(ByVal idpembar As PembelianBarangId, ByVal jum As Int32, ByVal har As Decimal, ByVal subt As Decimal, ByVal pembelianS As Pembelian, ByVal barangS As Barang)
             idpembelianbarang = idpembar
@@ -24,6 +30,26 @@ Namespace BussinessObject.Common
 
             Set(ByVal value As PembelianBarangId)
                 idpembelianbarang = value
+            End Set
+        End Property
+
+        Public Overridable Property eidpembelian() As Int32
+            Get
+                Return idpembelian
+            End Get
+
+            Set(ByVal value As Int32)
+                idpembelian = value
+            End Set
+        End Property
+
+        Public Overridable Property eidbarang() As Int32
+            Get
+                Return idbarang
+            End Get
+
+            Set(ByVal value As Int32)
+                idbarang = value
             End Set
         End Property
 

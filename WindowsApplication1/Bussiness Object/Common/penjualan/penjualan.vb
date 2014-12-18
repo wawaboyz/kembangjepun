@@ -16,6 +16,10 @@ Namespace BussinessObject.Common
         Private penjualantreatment As NHibernate.Collection.PersistentSet
         Private voucher As NHibernate.Collection.PersistentSet
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpen As Int32, ByVal tglpen As Date, ByVal namacus As String, ByVal grandt As Decimal, ByVal carab As String, ByVal nokar As String, ByVal namab As String, ByVal dis As Int32, ByVal isdel As Boolean, ByVal idcus As customer, ByVal idu As User, ByVal pakpen As NHibernate.Collection.PersistentSet, ByVal pentre As NHibernate.Collection.PersistentSet, ByVal vou As NHibernate.Collection.PersistentSet)
             idpenjualan = idpen
             tglpenjualan = tglpen

@@ -116,6 +116,8 @@ Public Class frmpegawai
     End Sub
 
     Private Sub txtcaripegawai_KeyUp(sender As Object, e As KeyEventArgs) Handles txtcaripegawai.KeyUp
+        userList = usermanager1.cariPegawai("%" + txtcaripegawai.Text + "%")
+        dglistpegawai.DataSource = userList
 
     End Sub
 
@@ -138,4 +140,5 @@ Public Class frmpegawai
         textkosong()
         grouppegawai.Enabled = False
     End Sub
+
 End Class

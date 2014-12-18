@@ -5,6 +5,10 @@
         Private barangSet As Barang
         Private paketSet As Paket
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idbarpak As BarangPaketId, ByVal jum As Int32, ByVal barangS As Barang, ByVal paketS As Paket)
             idbarangpaket = idbarpak
             jumlah = jum

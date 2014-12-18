@@ -6,6 +6,10 @@ Namespace BussinessObject.Common
         Private paketSet As Paket
         Private treatmentSet As Treatment
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpaktreat As PaketTreatmentId, ByVal jum As Int32, ByVal paketS As Paket, ByVal treatmentS As Treatment)
             idpakettreatment = idpaktreat
             jumlah = jum

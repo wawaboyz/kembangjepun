@@ -33,12 +33,18 @@
     Private Sub LOGOUTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LOGOUTToolStripMenuItem.Click
         If (MessageBox.Show("ANDA YAKIN MAU KELUAR?", "KELUAR SISTEM", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes) Then
             Me.Close()
-
-
         End If
     End Sub
 
-    Private Sub frmmenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub PEMBELIANToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PEMBELIANToolStripMenuItem.Click
+        Dim masterpembelian As New frmpembelian
+        masterpembelian.MdiParent = Me
+        masterpembelian.Show()
+    End Sub
 
+    Private Sub TREATMENTToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TREATMENTToolStripMenuItem1.Click
+        Dim masterpenjualantreatment As New frmpenjualantreatment
+        masterpenjualantreatment.MdiParent = Me
+        masterpenjualantreatment.Show()
     End Sub
 End Class

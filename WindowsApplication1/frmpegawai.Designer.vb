@@ -363,6 +363,7 @@ Partial Class frmpegawai
         Me.Controls.Add(Me.grouppegawai)
         Me.Name = "frmpegawai"
         Me.Text = "frmpegawai"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grouplistpegawai.ResumeLayout(False)
         Me.grouplistpegawai.PerformLayout()
         CType(Me.dglistpegawai, System.ComponentModel.ISupportInitialize).EndInit()

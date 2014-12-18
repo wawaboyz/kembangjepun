@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
-                   assembly="WindowsApplication1"
-                  namespace="BussinessObject.Common"
-                  auto-import="true">
-  <class name="User" table="user">-->
-<!--<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="false">
-  <class name="WindowsApplication1.BussinessObject.Common.User,WindowsApplication1" table="user">-->
+
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WindowsApplication1" namespace="WindowsApplication1.BussinessObject.Common">
   <class name="Barang" table="barang">
     <id name="eidbarang" column="idbarang" type="Int32">
@@ -13,15 +7,24 @@
     </id>
     <property name="enamabarang" column="namabarang" type="String" length="100" />
 
-    <property name="estokbarang" column="stokbarang" type="Int32" />
-    <property name="einventaris" column="inventaris" type="Int32" />
+    <property name="estokbarang" column="stokbarang" type="Int32" length="11" />
+    <property name="einventaris" column="inventaris" type="Boolean" />
     <property name="ehargaperkiraan" column="hargaperkiraan" type="Decimal" />
     <property name="ehargajual" column="hargajual" type="Decimal" />
     <property name="eisdelete" column="isdelete" type="Boolean"/>
 
-    <!--<set name="ebarangpaket" inverse="true" lazy="false" cascade="all">
+    <set name="ebarangpaket" inverse="true" lazy="false" cascade="all" table="barang_paket">
       <key column="idbarang" />
       <one-to-many class="BarangPaket" />
-    </set>-->
+    </set>
+    <set name="epembelianbarang" inverse="true" lazy="false" cascade="all" table="pembelian_barang">
+      <key column="idbarang" />
+      <one-to-many class="PembelianBarang" />
+    </set>
+    <set name="estokadjustmentbarang" inverse="true" lazy="true" cascade="all" table="stokadjustment_barang">
+      <key column="idbarang" />
+      <one-to-many class="StokAdjustmentBarang" />
+    </set>
+
   </class>
 </hibernate-mapping>

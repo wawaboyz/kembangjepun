@@ -10,6 +10,10 @@ Namespace BussinessObject.Common
         Private paketpenjualan As NHibernate.Collection.PersistentSet
         Private pakettreatment As NHibernate.Collection.PersistentSet
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpak As Int32, ByVal namapak As String, ByVal hargapak As Decimal, ByVal akt As Boolean, ByVal isdel As Boolean, ByVal barpak As NHibernate.Collection.PersistentSet, ByVal pakpen As NHibernate.Collection.PersistentSet, ByVal paktreat As NHibernate.Collection.PersistentSet)
             idpaket = idpak
             namapaket = namapak

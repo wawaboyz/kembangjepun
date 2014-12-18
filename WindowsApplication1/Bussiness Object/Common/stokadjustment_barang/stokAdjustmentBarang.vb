@@ -7,6 +7,10 @@ Namespace BussinessObject.Common
         Private stokadjustmentSet As StokAdjustment
         Private barangSet As Barang
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idstokad As StokAdjustmentBarangId, ByVal jum As Int32, ByVal har As Decimal, ByVal StokAdjusmentS As StokAdjustment, ByVal barangS As Barang)
             idstokadjustmentbarang = idstokad
             jumlah = jum

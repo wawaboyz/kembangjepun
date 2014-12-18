@@ -9,6 +9,10 @@ Namespace BussinessObject.Common
         Private treatmentSet As Treatment
         Private iduser As Int32
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idpentre As PenjualanTreatmentId, ByVal jum As Int32, ByVal har As Decimal, ByVal subt As Decimal, ByVal penjualanS As Penjualan, ByVal treatmentS As Treatment, ByVal idu As Int32)
             idpenjualantreatment = idpentre
             jumlah = jum

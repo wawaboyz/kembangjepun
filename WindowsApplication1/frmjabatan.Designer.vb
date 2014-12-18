@@ -22,7 +22,7 @@ Partial Class frmjabatan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgcarijabatan = New System.Windows.Forms.TextBox()
+        Me.txtcarijabatan = New System.Windows.Forms.TextBox()
         Me.txtkomisi = New System.Windows.Forms.TextBox()
         Me.txtjabatan = New System.Windows.Forms.TextBox()
         Me.lblkomisi = New System.Windows.Forms.Label()
@@ -52,12 +52,12 @@ Partial Class frmjabatan
         Me.groupmenu.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgcarijabatan
+        'txtcarijabatan
         '
-        Me.dgcarijabatan.Location = New System.Drawing.Point(67, 19)
-        Me.dgcarijabatan.Name = "dgcarijabatan"
-        Me.dgcarijabatan.Size = New System.Drawing.Size(168, 20)
-        Me.dgcarijabatan.TabIndex = 2
+        Me.txtcarijabatan.Location = New System.Drawing.Point(67, 19)
+        Me.txtcarijabatan.Name = "txtcarijabatan"
+        Me.txtcarijabatan.Size = New System.Drawing.Size(168, 20)
+        Me.txtcarijabatan.TabIndex = 2
         '
         'txtkomisi
         '
@@ -96,7 +96,7 @@ Partial Class frmjabatan
         Me.grouplistjabatan.Controls.Add(Me.btndelete)
         Me.grouplistjabatan.Controls.Add(Me.btnedit)
         Me.grouplistjabatan.Controls.Add(Me.btnnew)
-        Me.grouplistjabatan.Controls.Add(Me.dgcarijabatan)
+        Me.grouplistjabatan.Controls.Add(Me.txtcarijabatan)
         Me.grouplistjabatan.Controls.Add(Me.lblsearch)
         Me.grouplistjabatan.Controls.Add(Me.dglistjabatan)
         Me.grouplistjabatan.Location = New System.Drawing.Point(12, 12)
@@ -301,6 +301,7 @@ Partial Class frmjabatan
         Me.Controls.Add(Me.groupjabatan)
         Me.Name = "frmjabatan"
         Me.Text = "frmjabatan"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.grouplistjabatan.ResumeLayout(False)
         Me.grouplistjabatan.PerformLayout()
         CType(Me.dglistjabatan, System.ComponentModel.ISupportInitialize).EndInit()
@@ -311,7 +312,7 @@ Partial Class frmjabatan
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents dgcarijabatan As System.Windows.Forms.TextBox
+    Friend WithEvents txtcarijabatan As System.Windows.Forms.TextBox
     Friend WithEvents txtkomisi As System.Windows.Forms.TextBox
     Friend WithEvents txtjabatan As System.Windows.Forms.TextBox
     Friend WithEvents lblkomisi As System.Windows.Forms.Label

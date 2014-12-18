@@ -8,6 +8,10 @@ Namespace BussinessObject.Common
         Private iduser As User
         Private stokadjustmentbarang As NHibernate.Collection.PersistentSet
 
+        Public Sub New()
+
+        End Sub
+
         Sub New(ByVal idstokad As Int32, ByVal tglad As Date, ByVal alas As String, ByVal isdel As Boolean, ByVal idu As User, ByVal stokad As NHibernate.Collection.PersistentSet)
             idstokadjustment = idstokad
             tgladjustment = tglad

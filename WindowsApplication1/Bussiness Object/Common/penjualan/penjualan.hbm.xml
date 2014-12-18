@@ -9,17 +9,17 @@
     <property name="egrandtotal" column="grandtotal" type="Decimal"/>
     <property name="ecarabayar" column="carabayar" type="String" length="45"/>
     <property name="enokartu" column="nokartu" type="String" length="45"/>
-    <property name="enamanbank" column="namabank" type="String" length="45"/>
+    <property name="enamabank" column="namabank" type="String" length="45"/>
     <property name="ediskon" column="diskon" type="Int32" length="11"/>
     <property name="eisdelete" column="isdelete" type="Boolean"/>
-    <many-to-one name="eicustomer" column="idcustomer" class="Customer" not-null="false" />
+    <many-to-one name="eidcustomer" column="idcustomer" class="Customer" not-null="false" />
     <many-to-one name="eiduser" column="iduser" class="User" not-null="false" />
     
-    <set name="epaketpenjualan" inverse="true" lazy="false" cascade="all" Table="paket_penjualan">
+    <set name="epaketpenjualan" inverse="true" lazy="false" cascade="all" table="paket_penjualan">
       <key column="idpenjualan" />
       <one-to-many class="PaketPenjualan" />
     </set>
-    <set name="epenjualantreatment" inverse="true" lazy="false" cascade="all" Table="penjualan_treatment">
+    <set name="epenjualantreatment" inverse="true" lazy="false" cascade="all" table="penjualan_treatment">
       <key column="idpenjualan" />
       <one-to-many class="PenjualanTreatment" />
     </set>
